@@ -47,10 +47,11 @@ img {
 
 /* Estilos padrão para telas maiores */
 .glossary-card {
-  width: 300px;
+  width: 250px;
   height: 200px;
   perspective: 1000px; /* Define a perspectiva para efeito 3D */
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  margin-right: 5px; /* Margem na direita */
   /* ... (seus estilos existentes) */
 }
 
@@ -85,6 +86,7 @@ img {
   height: 100%;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra com deslocamento X e Y */
   position: absolute;
+  right: -8px;
   backface-visibility: hidden;
 }
 

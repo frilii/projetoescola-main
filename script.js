@@ -3,6 +3,11 @@ const glossaryData = [
     { term: "Biodiversidade", definition: "Variedade de formas de vida na Terra." },
     { term: "Ecossistema", definition: "Comunidade de seres vivos e seu ambiente físico interagindo juntos." },
     { term: "Fotossíntese", definition: "Processo pelo qual as plantas convertem luz solar em energia química." },
+    { term: "Biodiversidade", definition: "Variedade de formas de vida na Terra." },
+    { term: "Biodiversidade", definition: "Variedade de formas de vida na Terra." },
+    { term: "Biodiversidade", definition: "Variedade de formas de vida na Terra." },
+    { term: "Biodiversidade", definition: "Variedade de formas de vida na Terra." },
+    { term: "Biodiversidade", definition: "Variedade de formas de vida na Terra." },
     // Adicione mais termos e definições conforme necessário
 ];
 

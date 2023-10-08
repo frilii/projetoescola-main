@@ -9,7 +9,7 @@ body {
 header {
   background-color: #9EBD8D; /* Cor de destaque */
   padding: 20px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra com deslocamento X e Y */
+  box-shadow: 5px 5px 10px rgba(250, 210, 210, 0.3); /* Sombra com deslocamento X e Y */
   text-align: center;
 }
 
@@ -22,21 +22,52 @@ img {
   
 }
 
-#search {
-  padding: 10px;
-  width: 150px;
-  font-size: 16px;
+.form {
+  --width-of-input: 200px;
+  --border-height: 1px;
+  --border-before-color: #ffffff00;
+  --border-after-color: #ffff;
+  --input-hovered-color: #9EBD8D;
+  margin-top: -3px;
+  margin-left: 560px;
+  position: relative;
+  width: var(--width-of-input);
+ }
+ 
+ /* styling of Input */
+ .input {
+  color: #ffffff00;
+  font-size: 0.8rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
   border: none;
-  border-radius: 5px;
-}
-
-#search::placeholder {
-  color: #777; /* Cor do texto de espaço reservado */
-}
-
-#search:focus {
+  border-bottom: var(--border-height) solid var(--border-before-color);
+ }
+ /* styling of animated border */
+ .input-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+ }
+ /* Hover on Input */
+ input:hover {
+  background: var(--input-hovered-color);
+ }
+ 
+ input:focus {
   outline: none;
-}
+ }
+ /* here is code of animated border */
+ input:focus ~ .input-border {
+  width: 100%;
+ }
 
 #glossary {
   margin: 20px;
@@ -47,7 +78,7 @@ img {
 
 /* Estilos padrão para telas maiores */
 .glossary-card {
-  width: 250px;
+  width: 600px;
   height: 200px;
   perspective: 1000px; /* Define a perspectiva para efeito 3D */
   margin-bottom: 25px;

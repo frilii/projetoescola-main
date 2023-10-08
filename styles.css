@@ -47,7 +47,7 @@
  /*  change this for padding in the end of input */
   background: var(--input-bg);
   position: relative;
-  margin-left: 500px;
+  margin-left: 520px;
   margin-top: -2px;
   border-radius: 4px;
 }

@@ -1,149 +1,291 @@
-body {
-  position: relative;
-  top: -100px;
-  background-color: #ffffff; /* Cor de fundo */
-  color: #FFFFFF; /* Cor do texto */
-  font-family: Arial, sans-serif;
-}
+/* Estilo para desktops */
+@media screen and (min-width: 769px) {
+  /* Seus estilos aqui */
 
-header {
-  background-color: #9EBD8D; /* Cor de destaque */
-  padding: 20px;
-  box-shadow: 5px 5px 10px rgba(250, 210, 210, 0.3); /* Sombra com deslocamento X e Y */
-  text-align: center;
-}
-
-img {
-  position: relative;
-  top: 97px;
-  width: 100px;
-  height: 100px;
-  padding: 0.5px;
+  body {
+    position: relative;
+    top: -100px;
+    background-color: #ffffff; /* Cor de fundo */
+    color: #FFFFFF; /* Cor do texto */
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #9EBD8D; /* Cor de destaque */
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(250, 210, 210, 0.3); /* Sombra com deslocamento X e Y */
+    text-align: center;
+  }
+  
+  img {
+    position: relative;
+    top: 95px;
+    width: 100px;
+    height: 100px;
+    padding: 0.5px;
+    
+  }
+  
+  .form {
+    --width-of-input: 200px;
+    --border-height: 1px;
+    --border-before-color: #000000;
+    --border-after-color: #ffff;
+    --input-hovered-color: #9EBD8D;
+    margin-top: -3px;
+    margin-left: 560px;
+    position: relative;
+    width: var(--width-of-input);
+   }
+   
+   /* styling of Input */
+   .input {
+    color: #ffffff00;
+    font-size: 0.8rem;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+   }
+   /* styling of animated border */
+   .input-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+   }
+   /* Hover on Input */
+   input:hover {
+    background: var(--input-hovered-color);
+   }
+   
+   input:focus {
+    outline: none;
+   }
+   /* here is code of animated border */
+   input:focus ~ .input-border {
+    width: 100%;
+   }
+  
+  #glossary {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Estilos padrão para telas maiores */
+  .glossary-card {
+    width: 600px;
+    height: 200px;
+    perspective: 1000px; /* Define a perspectiva para efeito 3D */
+    margin-bottom: 25px;
+    margin-right: 5px; /* Margem na direita */
+    /* ... (seus estilos existentes) */
+  }
+  
+  
+  /* Outras media queries conforme necessário */
+  
+  .glossary-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    border-radius: 5px;
+  }
+  
+  .glossary-card:hover .glossary-card-inner {
+    transform: rotateY(180deg); /* Gira o card 180 graus ao passar o mouse */
+  }
+  
+  .glossary-card-front,
+  .glossary-card-back {
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra com deslocamento X e Y */
+    position: absolute;
+    right: -8px;
+    backface-visibility: hidden;
+  }
+  
+  .glossary-card-front {
+    background-color: #9EBD8D; /* Cor verde para a parte da frente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    color: #FFFFFF;
+  }
+  
+  .glossary-card-back {
+    background-color: #9EBD8D; /* Cor verde ligeiramente mais escura para a parte de trás */
+    transform: rotateY(180deg); /* Inicialmente, a parte de trás está virada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    color: #FFFFFF;
+  }
+  
+  /* Estilos adicionais para os cards, como cores de natureza e design futurista */
   
 }
 
-.form {
-  --width-of-input: 200px;
-  --border-height: 1px;
-  --border-before-color: #ffffff00;
-  --border-after-color: #ffff;
-  --input-hovered-color: #9EBD8D;
-  margin-top: -3px;
-  margin-left: 560px;
-  position: relative;
-  width: var(--width-of-input);
- }
- 
- /* styling of Input */
- .input {
-  color: #ffffff00;
-  font-size: 0.8rem;
-  background-color: transparent;
-  width: 100%;
-  box-sizing: border-box;
-  padding-inline: 0.5em;
-  padding-block: 0.7em;
-  border: none;
-  border-bottom: var(--border-height) solid var(--border-before-color);
- }
- /* styling of animated border */
- .input-border {
-  position: absolute;
-  background: var(--border-after-color);
-  width: 0%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  transition: 0.3s;
- }
- /* Hover on Input */
- input:hover {
-  background: var(--input-hovered-color);
- }
- 
- input:focus {
-  outline: none;
- }
- /* here is code of animated border */
- input:focus ~ .input-border {
-  width: 100%;
- }
 
-#glossary {
-  margin: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-/* Estilos padrão para telas maiores */
-.glossary-card {
-  width: 600px;
-  height: 200px;
-  perspective: 1000px; /* Define a perspectiva para efeito 3D */
-  margin-bottom: 25px;
-  margin-right: 5px; /* Margem na direita */
-  /* ... (seus estilos existentes) */
-}
-
-/* Estilos para telas menores, como smartphones */
-@media (max-width: 768px) {
+/* Estilo para dispositivos móveis */
+@media screen and (max-width: 768px) {
+  /* Seus estilos aqui */
+  body {
+    position: relative;
+    top: -100px;
+    background-color: #ffffff; /* Cor de fundo */
+    color: #FFFFFF; /* Cor do texto */
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #9EBD8D; /* Cor de destaque */
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.445); /* Sombra com deslocamento X e Y */
+    text-align: center;
+  }
+  
+  img {
+    position: relative;
+    top: 88px;
+    width: 90px;
+    height: 90px;
+    padding: 0.5px;
+    
+  }
+  
+  .form {
+    --width-of-input: 200px;
+    --border-height: 1px;
+    --border-before-color: #fafafa;
+    --border-after-color: #91d46d7c;
+    --input-hovered-color: #9EBD8D;
+    margin-top: -8px;
+    margin-left: 150px;
+    position: relative;
+    width: var(--width-of-input);
+   }
+   
+   /* styling of Input */
+   .input {
+    color: #ffffff00;
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+   }
+   /* styling of animated border */
+   .input-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s;
+   }
+   /* Hover on Input */
+   input:hover {
+    background: var(--input-hovered-color);
+   }
+   
+   input:focus {
+    outline: none;
+   }
+   /* here is code of animated border */
+   input:focus ~ .input-border {
+    width: 100%;
+   }
+  
   #glossary {
-      flex-direction: column;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
+  
+  /* Estilos padrão para telas maiores */
   .glossary-card {
-      width: 100%; /* Card ocupa 100% da largura */
-      margin-bottom: 10px; /* Espaçamento menor entre cards */
+    width: 600px;
+    height: 200px;
+    perspective: 1500px; /* Define a perspectiva para efeito 3D */
+    margin-bottom: 29px;
+    margin-right: 5px; /* Margem na direita */
+    /* ... (seus estilos existentes) */
   }
+  
+  
+  /* Outras media queries conforme necessário */
+  
+  .glossary-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    border-radius: 5px;
+  }
+  
+  .glossary-card:hover .glossary-card-inner {
+    transform: rotateY(180deg); /* Gira o card 180 graus ao passar o mouse */
+  }
+  
+  .glossary-card-front,
+  .glossary-card-back {
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra com deslocamento X e Y */
+    position: absolute;
+    right: -8px;
+    backface-visibility: hidden;
+  }
+  
+  .glossary-card-front {
+    background-color: #9EBD8D; /* Cor verde para a parte da frente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 9px;
+    color: #FFFFFF;
+  }
+  
+  .glossary-card-back {
+    background-color: #9EBD8D; /* Cor verde ligeiramente mais escura para a parte de trás */
+    transform: rotateY(180deg); /* Inicialmente, a parte de trás está virada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    color: #FFFFFF;
+  }
+  
+  /* Estilos adicionais para os cards, como cores de natureza e design futurista */
+  
 }
-
-/* Outras media queries conforme necessário */
-
-.glossary-card-inner {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-  border-radius: 5px;
-}
-
-.glossary-card:hover .glossary-card-inner {
-  transform: rotateY(180deg); /* Gira o card 180 graus ao passar o mouse */
-}
-
-.glossary-card-front,
-.glossary-card-back {
-  width: 100%;
-  height: 100%;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra com deslocamento X e Y */
-  position: absolute;
-  right: -8px;
-  backface-visibility: hidden;
-}
-
-.glossary-card-front {
-  background-color: #9EBD8D; /* Cor verde para a parte da frente */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  border: 1px solid #444;
-  border-radius: 5px;
-  padding: 10px;
-  color: #FFFFFF;
-}
-
-.glossary-card-back {
-  background-color: #9EBD8D; /* Cor verde ligeiramente mais escura para a parte de trás */
-  transform: rotateY(180deg); /* Inicialmente, a parte de trás está virada */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-  padding: 10px;
-  color: #FFFFFF;
-}
-
-/* Estilos adicionais para os cards, como cores de natureza e design futurista */
